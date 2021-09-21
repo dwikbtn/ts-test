@@ -22,3 +22,29 @@ var user2 = {
 //union
 var union = "1";
 var popularThing = ["something", "B"];
+//void
+var doSomething = function () {
+    console.log("doSomething");
+};
+//DOM
+var someElement = document.querySelector(".foo");
+console.log("some element", someElement.value);
+//Event Listener
+var eventElement = document.querySelector(".fa");
+eventElement.addEventListener("blur", function (event) {
+    var target = event.target;
+    console.log("event", target.value);
+});
+//classes in ts
+var UsersNew = /** @class */ (function () {
+    function UsersNew(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    UsersNew.prototype.getFullName = function () {
+        return this.firstName + " " + this.lastName;
+    };
+    return UsersNew;
+}());
+var userCl = new UsersNew("test", "name");
+console.log(userCl.getFullName);

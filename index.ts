@@ -49,3 +49,35 @@ interface UserInterface {
 }
 
 const popularThing: PopularTag[] = ["something", "B"];
+//void
+const doSomething = (): void => {
+  console.log("doSomething");
+};
+
+//DOM
+const someElement = document.querySelector(".foo") as HTMLInputElement;
+console.log("some element", someElement.value);
+//Event Listener
+const eventElement = document.querySelector(".fa");
+eventElement.addEventListener("blur", (event) => {
+  const target = event.target as HTMLInputElement;
+  console.log("event", target.value);
+});
+
+//classes in ts
+class UsersNew {
+  private firstName: string;
+  private lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  getFullName(): string {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const userCl = new UsersNew("test", "name");
+console.log(userCl.getFullName);
